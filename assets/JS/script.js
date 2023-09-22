@@ -14,6 +14,8 @@ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
+// var generateBtn = document.getElementById("generate");
+// generateBtn.addEventListener("click",PassGen)
 
 function PassGen(){
   var InputLenght = prompt("How many characters do you want the Password?");
@@ -46,18 +48,19 @@ var Cha ="";
   if(NumChoice)
   Cha += NumChoice
 for(var i = 0; i < length; i++){
-  password = Cha.charAt(Math.floor(Math.random()*Cha.length))
+  var random= Math.floor(Math.random()*Cha.length);
+  password += Cha.charAt(random);
   writePassword();
+  return ;
 }
 function writePassword() {
   var password = PassGen();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  return ;
+  return password;
 
 }
-
+// console.log(password);
 
 }
 generateBtn.addEventListener("click", PassGen);
-console.log(PassGen);
